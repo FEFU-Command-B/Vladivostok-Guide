@@ -3,7 +3,7 @@ import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-
+import Head from "../components/head";
 import '../static/scss/styles.scss'
 
 class Layout extends Component {
@@ -13,6 +13,9 @@ class Layout extends Component {
 
     render() {
         return (
+            <React.Fragment>
+                <Head />
+
             <div>
                 <CssBaseline/>
                 <AppBar position="relative">
@@ -32,6 +35,7 @@ class Layout extends Component {
                 {/*    </Typography>*/}
                 {/*</footer>*/}
             </div>
+            </React.Fragment>
         );
     }
 }
