@@ -16,21 +16,21 @@ class Layout extends Component {
             <div>
                 <CssBaseline/>
                 <AppBar position="relative">
-                    <Toolbar>
-                        <Typography variant="h6" color="inherit" noWrap>
-                            Vladik Traveler
-                        </Typography>
-                    </Toolbar>
-                </AppBar>
+                <Toolbar>
+
+                        Vladik Traveler
+
+                </Toolbar>
+            </AppBar>
                 {this.props.children}
-                <footer>
-                    <Typography variant="h6" align="center" gutterBottom>
-                        Пися
-                    </Typography>
-                    <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-                        Something here to give the footer a purpose!
-                    </Typography>
-                </footer>
+                {/*<footer>*/}
+                {/*    <Typography variant="h6" align="center" gutterBottom>*/}
+                {/*        Пися*/}
+                {/*    </Typography>*/}
+                {/*    <Typography variant="subtitle1" align="center" color="textSecondary" component="p">*/}
+                {/*        Something here to give the footer a purpose!*/}
+                {/*    </Typography>*/}
+                {/*</footer>*/}
             </div>
         );
     }

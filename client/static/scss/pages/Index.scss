@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'SequentialistBB';
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_1_0.woff2') format('woff2'),
+  url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_0_0.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'SequentialistBB';
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_0_0.woff2') format('woff2'),
+  url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_0_0.woff') format('woff');
+  font-style: italic;
+  font-weight: 400;
+}
+.container {
+  display: flex;
+  height: calc(100vh - 64px);
+  width: 100%;
+  //position: relative;
+}
+
+.boy {
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  z-index: -1;
+  img {
+    width: 250px;
+  }
+}
+
+.message__box {
+  margin-top: 50px;
+  margin-left: 80px;
+  width: 500px;
+  font-family: SequentialistBB, cursive;
+  font-size: 1.75vw;
+  span {
+    color: #fff;
+  }
+  blockquote.bubble {
+    background-position: center;
+    background-repeat: no-repeat !important;
+    background-size: 100% 100%;
+    margin: 0 auto;
+    text-align: center;
+    height: 0;
+    box-sizing: content-box;
+    line-height: 1;
+    padding: 70px 50px 0 50px;
+  }
+  blockquote.speech {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/speech-bubble.svg");
+    width: 350px;
+    height: 200px;
+    //padding-top: 6%;
+    padding-bottom: 5%;
+  }
+
+}
+
+.right-button {
+  align-self: flex-end;
+  bottom: 50px;
+  position: absolute;
+  right: 30px;
+
+  button {
+    font-family: SequentialistBB, cursive;
+    font-size: 1.3vw;
+    width: 180px;
+    height: 50px;
+  }
+}
+
