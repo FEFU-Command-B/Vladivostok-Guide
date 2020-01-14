@@ -3,6 +3,7 @@ import Layout from '../layout/default'
 import Card from '../components/card'
 import Button from '@material-ui/core/Button';
 import Link from 'next/link'
+import Answers from '../components/answers'
 
 export default class Home extends Component {
     constructor(props) {
@@ -16,6 +17,7 @@ export default class Home extends Component {
         return (
             <Layout>
                 <div className="container">
+                     <Answers/>
                     <div className="left__container">
                         <div className="boy">
                             <img src="../static/images/boy.png"/>
