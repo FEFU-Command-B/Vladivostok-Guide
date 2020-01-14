@@ -1,20 +1,35 @@
 import React, {Component} from 'react'
 import Layout from '../layout/default'
-import Card from '../components/card'
-import Button from '@material-ui/core/Button';
+import ColumnCard from '../components/card'
+
 
 export default class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            anny: 'ne smotrit'
-        }
     }
 
     render() {
         return (
             <Layout>
-                <span>Тут будет план</span>
+                <div className="plan__container">
+                    <div className="plan__columns">
+                        <div className="plan__columns--item">
+                            <ColumnCard/>
+                        </div>
+                        <div className="plan__columns--item">
+                            <ColumnCard/>
+                        </div>
+                        <div className="plan__columns--item">
+                            <ColumnCard/>
+                        </div>
+                        <div className="plan__columns--item">
+                            <ColumnCard/>
+                        </div>
+                        <div className="plan__columns--item">
+                            <ColumnCard/>
+                        </div>
+                    </div>
+                </div>
             </Layout>
         );
     }
