@@ -4,12 +4,13 @@ import Card from '../components/card'
 import Button from '@material-ui/core/Button';
 import Link from 'next/link'
 import Answers from '../components/answers'
+import QuestionCard from '../components/questionCard'
 
 export default class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            anny: 'ne smotrit'
+            options : ""
         }
     }
 
@@ -18,6 +19,7 @@ export default class Home extends Component {
             <Layout>
                 <div className="container">
                      <Answers/>
+                     <QuestionCard/>
                     <div className="left__container">
                         <div className="boy">
                             <img src="../static/images/boy.png"/>

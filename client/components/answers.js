@@ -23,29 +23,32 @@ class Answers extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            anny: 'ne smotrit'
-        }
+           options : ""
+        };
         this.GetData = this.GetData.bind(this);
     }
-    GetData() {
-
+     GetData() {
+        //let request =  fetch('https://vladikproj.azurewebsites.net/question');
+            fetch('https://vladikproj.azurewebsites.net/question')
+                .then(res => res.json())
+                .then(res => this.setState({options : res.options}));
     }
+
+    componentDidMount() {
+        this.GetData();
+    }
+
     render () {
+        console.log(typeof(this.state.options));
         return (<FormControl component="fieldset">
             <FormLabel component="legend">Choose options suitable for you</FormLabel>
             <RadioGroup defaultValue="female" aria-label="gender" name="customized-radios">
-                <FormControlLabel value="" control={<StyledRadio />} label="Female" />
-                <FormControlLabel value="" control={<StyledRadio />} label="Male" />
-                <FormControlLabel value="" control={<StyledRadio />} label="Other" />
-                <FormControlLabel
-                    value="disabled"
-                    disabled
-                    control={<StyledRadio />}
-                    label="(Disabled option)"
-                />
+                {Object.values(this.state.options).map(option =>
+                    <FormControlLabel value={option} control={<StyledRadio />} label={option} />
+                )}
             </RadioGroup>
         </FormControl>);
     }
-};
+}
 
 export default Answers
