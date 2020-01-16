@@ -20,19 +20,19 @@ export default function QuestionCard() {
 
     return (
         <Card className={classes.card}>
-            <CardActionArea>
+            {/*<CardActionArea>*/}
                 <CardContent>
                     <Answers/>
                 </CardContent>
-            </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary">
-                    Share
-                </Button>
-                <Button size="small" color="primary">
-                    Learn More
-                </Button>
-            </CardActions>
+            {/*</CardActionArea>*/}
+            {/*<CardActions>*/}
+            {/*    <Button size="small" color="primary">*/}
+            {/*        Share*/}
+            {/*    </Button>*/}
+            {/*    <Button size="small" color="primary">*/}
+            {/*        Learn More*/}
+            {/*    </Button>*/}
+            {/*</CardActions>*/}
         </Card>
     );
 }

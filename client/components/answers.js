@@ -7,6 +7,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import fetch from 'isomorphic-unfetch'
+import Button from "@material-ui/core/Button";
+import CardActions from "@material-ui/core/CardActions";
 function StyledRadio(props) {
 
 
@@ -50,6 +52,11 @@ class Answers extends Component {
                     <FormControlLabel value={option} control={<StyledRadio />} label={option} />
                 )}
             </RadioGroup>
+            <div className="right-button_answer">
+            <Button size="small" color="primary" >
+                Confirm
+            </Button>
+            </div>
         </FormControl>);
     }
 }

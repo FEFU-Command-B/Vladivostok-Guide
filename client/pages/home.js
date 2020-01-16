@@ -18,8 +18,9 @@ export default class Home extends Component {
         return (
             <Layout>
                 <div className="container">
-                     {/*<Answers/>*/}
+                    <div className="quiz">
                      <QuestionCard/>
+                    </div>
                     <div className="left__container">
                         <div className="boy">
                             <img src="../static/images/boy.png"/>
