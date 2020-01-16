@@ -49,19 +49,19 @@ class SimpleModal extends Component {
 
     render () {
         const {
-            onCloseRequest,
-            children,
-            classes,
+            onCloseRequest
         } = this.props;
 
         return (
             <div className="modalOverlay">
-                <div
-                    className="modal"
-                    ref={node => (this.modal = node)}
-                >
-                    <div className="">
-                        {children}
+                <div className="modal" ref={node => (this.modal = node)}>
+                    <div className="info__content">
+                        <img src="../static/images/123456.jpg"/>
+                        <div>
+                            <div>Name</div>
+                            <div>12:30</div>
+                            <div>Info info info info info info info</div>
+                        </div>
                     </div>
                 </div>
 

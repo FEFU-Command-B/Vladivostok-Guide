@@ -32,14 +32,14 @@ export default class ColumnCard extends Component {
             <Card className="">
                 {showModal &&
                 <SimpleModal onCloseRequest={() => this.handleToggleModal()}>
-                    <img src="https://placeimg.com/900/650/nature" alt="Nature" />
+                    <img src="../static/images/123456.jpg" alt="Nature" />
                 </SimpleModal>}
                 <CardActionArea>
                     <CardMedia
                         component="img"
                         alt="Contemplative Reptile"
                         height="140"
-                        image="/static/images/cards/contemplative-reptile.jpg"
+                        image="../static/images/123456.jpg"
                         title="Contemplative Reptile"
                     />
                     <CardContent>
