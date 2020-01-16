@@ -23,7 +23,8 @@ class Answers extends Component {
     constructor(props) {
         super(props);
         this.state = {
-           options : ""
+            options : "",
+            question : ""
         };
         this.GetData = this.GetData.bind(this);
     }
@@ -31,7 +32,8 @@ class Answers extends Component {
         //let request =  fetch('https://vladikproj.azurewebsites.net/question');
             fetch('https://vladikproj.azurewebsites.net/question')
                 .then(res => res.json())
-                .then(res => this.setState({options : res.options}));
+                .then(res => this.setState({options : res.options,
+                question : res.question}));
     }
 
     componentDidMount() {
@@ -41,6 +43,7 @@ class Answers extends Component {
     render () {
         console.log(typeof(this.state.options));
         return (<FormControl component="fieldset">
+            <FormLabel component="legend">{this.state.question}</FormLabel>
             <FormLabel component="legend">Choose options suitable for you</FormLabel>
             <RadioGroup defaultValue="female" aria-label="gender" name="customized-radios">
                 {Object.values(this.state.options).map(option =>

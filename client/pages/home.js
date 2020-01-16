@@ -18,20 +18,20 @@ export default class Home extends Component {
         return (
             <Layout>
                 <div className="container">
-                     <Answers/>
+                     {/*<Answers/>*/}
                      <QuestionCard/>
                     <div className="left__container">
                         <div className="boy">
                             <img src="../static/images/boy.png"/>
                         </div>
-                        <div className="message__box">
-                            <section>
-                                <blockquote className="speech bubble">
-                                   <span>Welcome to Vladivostok! My name is Vladik!
-                                       Nice to meet you. Let me ask you some questions?</span>
-                                </blockquote>
-                            </section>
-                        </div>
+                        {/*<div className="message__box">*/}
+                        {/*    <section>*/}
+                        {/*        <blockquote className="speech bubble">*/}
+                        {/*           <span>Welcome to Vladivostok! My name is Vladik!*/}
+                        {/*               Nice to meet you. Let me ask you some questions?</span>*/}
+                        {/*        </blockquote>*/}
+                        {/*    </section>*/}
+                        {/*</div>*/}
                     </div>
                     <div className="right-button">
                         <Link href="/questions">
