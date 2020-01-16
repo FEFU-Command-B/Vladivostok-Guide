@@ -26,25 +26,38 @@ class Answers extends Component {
         super(props);
         this.state = {
             options : "",
-            question : ""
+            question : "",
+            value: -1
         };
         this.GetData = this.GetData.bind(this);
+        this.UpdateData = this.UpdateData.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
      GetData() {
         //let request =  fetch('https://vladikproj.azurewebsites.net/question');
             fetch('https://vladikproj.azurewebsites.net/question')
                 .then(res => res.json())
                 .then(res => this.setState({options : res.options,
-                question : res.question}));
+                question : res.question, value: -1}));
     }
-
+    async UpdateData () {
+        const res = await fetch('https://vladikproj.azurewebsites.net/question/' + this.state.value, {
+           method: 'POST'
+        });
+        this.setState({options : res.options,
+            question : res.question, value: -1});
+    }
+    handleChange(event) {
+        this.setState({value: event.target.value});
+    }
     componentDidMount() {
         this.GetData();
     }
 
+
     render () {
         console.log(typeof(this.state.options));
-        return (<FormControl component="fieldset">
+        return (<FormControl component="fieldset"    value={this.state.value} onChange={this.handleChange}>
             <FormLabel component="legend">{this.state.question}</FormLabel>
             <FormLabel component="legend">Choose options suitable for you</FormLabel>
             <RadioGroup defaultValue="female" aria-label="gender" name="customized-radios">
@@ -53,7 +66,8 @@ class Answers extends Component {
                 )}
             </RadioGroup>
             <div className="right-button_answer">
-            <Button size="small" color="primary" >
+            {/*<Button size="small" color="primary" action={this.UpdateData()}>*/}
+            <Button size="small" color="primary">
                 Confirm
             </Button>
             </div>
