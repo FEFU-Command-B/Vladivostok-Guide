@@ -27,7 +27,8 @@ class Answers extends Component {
         this.state = {
             options : "",
             question : "",
-            value: -1
+            value: -1,
+            isButtonDisabled: false
         };
         this.GetData = this.GetData.bind(this);
         this.UpdateData = this.UpdateData.bind(this);
@@ -38,14 +39,18 @@ class Answers extends Component {
             fetch('https://vladikproj.azurewebsites.net/question')
                 .then(res => res.json())
                 .then(res => this.setState({options : res.options,
-                question : res.question, value: -1}));
+                question : res.question, value: -1, isButtonDisabled : false}));
     }
-    async UpdateData () {
-        const res = await fetch('https://vladikproj.azurewebsites.net/question/' + this.state.value, {
-           method: 'POST'
-        });
-        this.setState({options : res.options,
-            question : res.question, value: -1});
+    async UpdateData (event) {
+        fetch('https://vladikproj.azurewebsites.net/question/'+ this.state.value)
+            .then(res => res.json())
+            .then(res => {
+                if (res.question === null) {
+                    this.setState({isButtonDisabled : true});
+                    return;
+                }
+                this.setState({options : res.options,
+                question : res.question, value: -1, isButtonDisabled : false})});
     }
     handleChange(event) {
         this.setState({value: event.target.value});
@@ -56,18 +61,18 @@ class Answers extends Component {
 
 
     render () {
-        console.log(typeof(this.state.options));
+        //console.log(typeof(this.state.options));
         return (<FormControl component="fieldset"    value={this.state.value} onChange={this.handleChange}>
             <FormLabel component="legend">{this.state.question}</FormLabel>
             <FormLabel component="legend">Choose options suitable for you</FormLabel>
-            <RadioGroup defaultValue="female" aria-label="gender" name="customized-radios">
+            <RadioGroup defaultValue="" aria-label="options" name="customized-radios">
                 {Object.values(this.state.options).map(option =>
                     <FormControlLabel value={option} control={<StyledRadio />} label={option} />
                 )}
             </RadioGroup>
             <div className="right-button_answer">
-            {/*<Button size="small" color="primary" action={this.UpdateData()}>*/}
-            <Button size="small" color="primary">
+            <Button size="small" color="primary" onClick={this.UpdateData} disabled={this.state.isButtonDisabled}>
+            {/*<Button size="small" color="primary">*/}
                 Confirm
             </Button>
             </div>
