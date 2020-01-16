@@ -55,9 +55,9 @@ class SimpleModal extends Component {
         } = this.props;
 
         return (
-            <div className="">
+            <div className="modalOverlay">
                 <div
-                    className=""
+                    className="modal"
                     ref={node => (this.modal = node)}
                 >
                     <div className="">
@@ -67,7 +67,7 @@ class SimpleModal extends Component {
 
                 <button
                     type="button"
-                    className=""
+                    className="closeButton"
                     onClick={onCloseRequest}
                 />
             </div>
