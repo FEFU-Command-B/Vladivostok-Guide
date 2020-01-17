@@ -1,0 +1,17 @@
+.route__card {
+
+}
+
+.time {
+  display: flex;
+  Typography {
+    padding-right: 30px;
+  }
+}
+
+@include media-max-width(767) {
+  .info__content{
+    display: block;
+  }
+}
+
