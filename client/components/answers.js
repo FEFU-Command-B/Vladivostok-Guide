@@ -38,11 +38,23 @@ class Answers extends Component {
         this.handleChange = this.handleChange.bind(this);
     }
      async GetData() {
-            const responce = await fetch('https://vladikproj.azurewebsites.net/question');
-            const json = await responce.json();
-            this.setState({options : json.options,
-            question : json.question, value: -1, isButtonDisabled : true,
-            isLoaded : true});
+        const responce = await fetch('https://vladikproj.azurewebsites.net/question',{
+            credentials: 'include'
+        });
+        const json = await responce.json();
+        this.setState({options : json.options,
+        question : json.question, value: -1, isButtonDisabled : true,
+        isLoaded : true});
+        const resp1 = await fetch('https://vladikproj.azurewebsites.net/cookieTest/set/mm',{
+            credentials: 'include'
+        });
+        const json1 = await resp1.json();
+        console.log(json1);
+        const resp2 = await fetch('https://vladikproj.azurewebsites.net/cookieTest/get/mm',{
+            credentials: 'include'
+        });
+        const json2 = await resp2.json();
+        console.log(json2);
     }
     async UpdateData (event) {
         //setCookie('quiz', {});
@@ -54,7 +66,7 @@ class Answers extends Component {
             .then(res => res.json())
             .then(res => {
                 if (res.question === null) {
-                    this.setState({isButtonDisabled : true, isLast: true});
+                    this.setState({isButtonDisabled : false, isLast: true});
                     this.props.passVal(true);
                     return;
                 }
@@ -87,7 +99,7 @@ class Answers extends Component {
             </RadioGroup>
             <div className="right-button_answer">
                 {/*window.location.href = '/plan'*/}
-            <Button size="small" color="primary" onClick={this.UpdateData}>
+            <Button size="small" color="primary" onClick={this.UpdateData} disabled={this.state.isButtonDisabled}>
                 {this.state.isLast? 'Go to your personal Route' : 'Confirm'}
             </Button>
             </div>
