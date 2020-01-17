@@ -79,7 +79,6 @@ class Answers extends Component {
         //console.log(typeof(this.state.options));
         return (<FormControl component="fieldset"    value={this.state.value} onChange={this.handleChange} disabled={this.state.isLast}>
             <FormLabel component="legend">{this.state.question}</FormLabel>
-            <FormLabel component="legend">Choose options suitable for you</FormLabel>
             <RadioGroup defaultValue="" aria-label="options" name="customized-radios">
                 {Object.values(this.state.options).map(option =>
                     <FormControlLabel value={option} control={<StyledRadio />} label={option} />
