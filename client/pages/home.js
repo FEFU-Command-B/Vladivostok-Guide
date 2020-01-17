@@ -27,7 +27,7 @@ export default class Home extends Component {
                     </div>
                     <div className="left__container">
                         <div className="boy">
-                            <img src="../static/images/boy.png"/>
+                            <img src="../static/images/Vladik.png"/>
                         </div>
                     </div>
                     <div className="right-button">
