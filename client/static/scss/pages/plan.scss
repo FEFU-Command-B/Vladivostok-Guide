@@ -19,6 +19,17 @@
   }
 }
 
+.second__boy {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  z-index: 9999;
+  transform: rotateY(180deg);
+  img {
+    width: 7%;
+  }
+}
+
 .plan__columns--item {
   width: 300px;
   margin-bottom: 30px;

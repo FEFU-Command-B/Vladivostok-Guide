@@ -20,6 +20,9 @@ export default class Home extends Component {
         }
         return (
             <Layout>
+                <div className="second__boy">
+                    <img src="../static/images/Vladik.png"/>
+                </div>
                 <div className="plan__container">
                     <div className="plan__columns">
                         {
