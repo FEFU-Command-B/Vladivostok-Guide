@@ -35,7 +35,7 @@ export default class Home extends Component {
                             //this.formRef.state.isLast ?
                             //false ?
                             this.state.isLast ?
-                            <Button href="/questions" variant="contained" color="primary">
+                            <Button href="/plan" variant="contained" color="primary">
                                 Go to Your Personal Route!
                             </Button>
                             : null
