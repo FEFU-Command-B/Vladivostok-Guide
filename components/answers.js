@@ -47,7 +47,6 @@ class Answers extends Component {
 	}
 
 	async GetData() {
-
 		const responce = await fetch(`${cserv}/question`, init);
 		const json = await responce.json();
 		this.setState({
@@ -55,6 +54,9 @@ class Answers extends Component {
 			question: json.question, value: -1, isButtonDisabled: true,
 			isLoaded: true
 		});
+		if (this.state.question === null) {
+			window.location.href = '/plan';
+		}
 	}
 
 	async UpdateData(event) {
