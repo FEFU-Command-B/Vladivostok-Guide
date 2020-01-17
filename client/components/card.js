@@ -71,7 +71,7 @@ export default class ColumnCard extends Component {
                 <CardActions>
                     <div onClick={() => this.handleToggleModal()}>
                         <Button className="more__button" size="small" color="primary">
-                            More
+                            Читать
                         </Button>
                 </div>
                 </CardActions>

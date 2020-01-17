@@ -67,6 +67,12 @@
     }
   }
 }
+.moving {
+  @include media-max-width(767) {
+    overflow: auto;
+    height: 200px;
+  }
+}
 
 .info__content {
   display: flex;
