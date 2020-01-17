@@ -11,7 +11,7 @@ import Answers from '../components/answers'
 
 const useStyles = makeStyles({
     card: {
-        maxWidth: 345,
+        maxWidth: 600,
     },
 });
 

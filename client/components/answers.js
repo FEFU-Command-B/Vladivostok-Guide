@@ -88,21 +88,20 @@ class Answers extends Component {
         if (!this.state.isLoaded) {
             return(<div></div>);
         }
-        //console.log(typeof(this.state.options));
-        return (<FormControl component="fieldset"    value={this.state.value} onChange={this.handleChange} disabled={this.state.isLast}>
-            <FormLabel component="legend">{this.state.question}</FormLabel>
-            <RadioGroup defaultValue="" aria-label="options" name="customized-radios">
-                {Object.values(this.state.options).map(option =>
-                    <FormControlLabel value={option} control={<StyledRadio />} label={option} />
-                )}
-            </RadioGroup>
-            <div className="right-button_answer">
-                {/*window.location.href = '/plan'*/}
-            <Button size="small" color="primary" onClick={this.UpdateData} disabled={this.state.isButtonDisabled}>
-                {this.state.isLast? 'Go to your personal Route' : 'Confirm'}
-            </Button>
-            </div>
-        </FormControl>);
+        return (
+            <FormControl component="fieldset"    value={this.state.value} onChange={this.handleChange} disabled={this.state.isLast}>
+                <FormLabel className = "question">{this.state.question}</FormLabel>
+                <RadioGroup defaultValue="" aria-label="options" name="customized-radios">
+                    {Object.values(this.state.options).map(option =>
+                        <FormControlLabel value={option} control={<StyledRadio />} label={option} />
+                    )}
+                </RadioGroup>
+                <div className="right-button_answer">
+                    <Button size="small" color="primary" onClick={this.UpdateData} disabled={this.state.isButtonDisabled}>
+                        {this.state.isLast? 'Go to your personal Route' : 'Confirm'}
+                    </Button>
+                </div>
+            </FormControl>);
     }
 }
 
