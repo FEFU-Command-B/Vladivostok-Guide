@@ -54,7 +54,7 @@ export default class ColumnCard extends Component {
                         </div>
                         <div>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                {this.props.discription}
+                                {this.props.description}
                             </Typography>
                         </div>
                         <div>

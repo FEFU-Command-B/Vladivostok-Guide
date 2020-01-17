@@ -29,18 +29,20 @@ class Answers extends Component {
             question : "",
             value: -1,
             isButtonDisabled: true,
-            isLast: false
+            isLast: false,
+            isLoaded : false
         };
         this.GetData = this.GetData.bind(this);
         this.UpdateData = this.UpdateData.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
-     GetData() {
+     async GetData() {
         //let request =  fetch('https://vladikproj.azurewebsites.net/question');
-            fetch('https://vladikproj.azurewebsites.net/question')
-                .then(res => res.json())
-                .then(res => this.setState({options : res.options,
-                question : res.question, value: -1, isButtonDisabled : true}));
+            const responce = await fetch('https://vladikproj.azurewebsites.net/question');
+                const json = await responce.json();
+                this.setState({options : json.options,
+                question : json.question, value: -1, isButtonDisabled : true,
+                isLoaded : true});
     }
     async UpdateData (event) {
         fetch('https://vladikproj.azurewebsites.net/question/'+ this.state.value)
@@ -66,6 +68,9 @@ class Answers extends Component {
 
 
     render () {
+        if (!this.state.isLoaded) {
+            return(<div></div>);
+        }
         //console.log(typeof(this.state.options));
         return (<FormControl component="fieldset"    value={this.state.value} onChange={this.handleChange}>
             <FormLabel component="legend">{this.state.question}</FormLabel>

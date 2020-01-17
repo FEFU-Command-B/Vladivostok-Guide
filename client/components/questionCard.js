@@ -31,8 +31,6 @@ export default class QuestionCard extends Component{
             <Card className={useStyles.card}>
                 <CardContent>
                     <Answers passVal={this.PopLastValue}/>
-                    {/*{this.setState(this.formRef.current)}*/}
-
                 </CardContent>
             </Card>
         );
