@@ -2,15 +2,10 @@
 
 body {
   margin: 0 auto;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif !important;
 }
 
 header {
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 20px;
-}
-
-.hui {
-  font-size: 50px;
-  color: brown;
+  font-family: 'Open Sans Condensed', sans-serif !important;
+  font-size: 25px;
 }

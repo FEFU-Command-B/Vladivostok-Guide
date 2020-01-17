@@ -47,11 +47,11 @@ export default class ColumnCard extends Component {
                         title="Contemplative Reptile"
                     />
                     <CardContent>
-                        <div className="time">
-                            <Typography gutterBottom variant="h5" component="h2">
+                        <div className="card__info">
+                            <Typography className="place__name" gutterBottom variant="h5" component="h2">
                                 {this.props.name}
                             </Typography>
-                            <Typography gutterBottom variant="h5" component="h2">
+                            <Typography className="place__time"gutterBottom variant="h5" component="h2">
                                 {this.props.time}
                             </Typography>
                         </div>
@@ -62,17 +62,17 @@ export default class ColumnCard extends Component {
                         {/*</div>*/}
                         <div>
                             {this.props.tags.map(tag =>
-                                <Chip label={tag} variant="outlined" />)
+                                <Chip label={tag} className="place__chip" variant="outlined" />)
                             }
                         </div>
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
                     <div onClick={() => this.handleToggleModal()}>
-                        <Button size="small" color="primary">
+                        <Button className="more__button" size="small" color="primary">
                             More
                         </Button>
-                    </div>
+                </div>
                 </CardActions>
             </Card>
         );

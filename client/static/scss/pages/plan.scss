@@ -9,6 +9,7 @@
   }
 }
 
+
 .plan__columns {
   column-count: 4;
   column-gap: 30px;
@@ -45,4 +46,27 @@
   -moz-page-break-inside:avoid;
   page-break-inside: avoid;
   break-inside: avoid-column;
+
+}
+
+.place__name {
+  width: 150px;
+  padding-right: 10px;
+  font-family: 'Open Sans Condensed', sans-serif !important;
+  font-size: 30px !important;
+}
+
+.place__time {
+  font-family: 'Open Sans Condensed', sans-serif !important;
+  font-size: 30px !important;
+}
+
+.place__chip {
+  font-family: 'Open Sans Condensed', sans-serif !important;
+  font-size: 15px !important;
+}
+
+.more__button {
+  font-family: 'Open Sans Condensed', sans-serif !important;
+  font-size: 15px !important;
 }

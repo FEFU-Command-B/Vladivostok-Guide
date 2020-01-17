@@ -59,12 +59,12 @@ class SimpleModal extends Component {
                     <div className="info__content">
                         <img src="../static/images/123456.jpg"/>
                         <div>
-                            <div>{this.props.name}</div>
-                            <div>{this.props.time}</div>
-                            <div>{this.props.description}</div>
+                            <div className="name">{this.props.name}</div>
+                            <div className="place__time">{this.props.time}</div>
+                            <div className="description">{this.props.description}</div>
                             <div>
                                 {this.props.tags.map(tag =>
-                                    <Chip label={tag} variant="outlined" />)
+                                    <Chip label={tag} className="place__chip" variant="outlined" />)
                                 }
                             </div>
                         </div>

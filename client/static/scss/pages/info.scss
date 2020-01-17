@@ -63,4 +63,22 @@
 .info__content {
   display: flex;
   margin: 20px 20px 20px 20px;
+  font-family: 'Open Sans Condensed', sans-serif;
+
+  .name {
+    font-size: 40px;
+  }
+
+  .place__time {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+
+  .place__chip {
+    font-family: 'Open Sans Condensed', sans-serif !important;
+    font-size: 15px !important;
+  }
 }
