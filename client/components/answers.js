@@ -45,6 +45,10 @@ class Answers extends Component {
                 isLoaded : true});
     }
     async UpdateData (event) {
+        if (this.state.isLast) {
+            window.location.href = '/plan';
+            return;
+        }
         fetch('https://vladikproj.azurewebsites.net/question/'+ this.state.value)
             .then(res => res.json())
             .then(res => {
@@ -72,7 +76,7 @@ class Answers extends Component {
             return(<div></div>);
         }
         //console.log(typeof(this.state.options));
-        return (<FormControl component="fieldset"    value={this.state.value} onChange={this.handleChange}>
+        return (<FormControl component="fieldset"    value={this.state.value} onChange={this.handleChange} disabled={this.state.isLast}>
             <FormLabel component="legend">{this.state.question}</FormLabel>
             <FormLabel component="legend">Choose options suitable for you</FormLabel>
             <RadioGroup defaultValue="" aria-label="options" name="customized-radios">
@@ -81,9 +85,9 @@ class Answers extends Component {
                 )}
             </RadioGroup>
             <div className="right-button_answer">
-            <Button size="small" color="primary" onClick={this.UpdateData} disabled={this.state.isButtonDisabled}>
-            {/*<Button size="small" color="primary">*/}
-                Confirm
+                {/*window.location.href = '/plan'*/}
+            <Button size="small" color="primary" onClick={this.UpdateData}>
+                {this.state.isLast? 'Go to your personal Route' : 'Confirm'}
             </Button>
             </div>
         </FormControl>);

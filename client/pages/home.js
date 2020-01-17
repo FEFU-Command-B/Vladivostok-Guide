@@ -32,17 +32,15 @@ export default class Home extends Component {
                             <QuestionCard ref="quiz" propsName={this.LastQuestionChange}/>
                         </div>
                     </div>
-                    <div className="right-button">
-                        {
-                            //this.formRef.state.isLast ?
-                            //false ?
-                            this.state.isLast ?
-                            <Button href="/plan" variant="contained" color="primary">
-                                Go to Your Personal Route!
-                            </Button>
-                            : null
-                        }
-                    </div>
+                    {/*<div className="right-button">*/}
+                    {/*    {*/}
+                    {/*        this.state.isLast ?*/}
+                    {/*        <Button href="/plan" variant="contained" color="primary">*/}
+                    {/*            Go to Your Personal Route!*/}
+                    {/*        </Button>*/}
+                    {/*        : null*/}
+                    {/*    }*/}
+                    {/*</div>*/}
                 </div>
             </Layout>
         );
