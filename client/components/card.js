@@ -35,6 +35,7 @@ export default class ColumnCard extends Component {
                 {showModal &&
                 <SimpleModal tags={this.props.tags} name={this.props.name}
                              time={this.props.time} description={this.props.description}
+                             image={this.props.image}
                              onCloseRequest={() => this.handleToggleModal()}>
                     <img src="../static/images/123456.jpg" alt="Nature" />
                 </SimpleModal>}

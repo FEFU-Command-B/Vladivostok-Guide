@@ -75,6 +75,13 @@
   }
 }
 
+.variants {
+  span {
+    font-family: 'Open Sans Condensed', sans-serif !important;
+    font-size: 20px !important;
+  }
+}
+
 .quiz {
   margin :auto;
   //width :50%;
@@ -83,6 +90,6 @@
   //padding: 20px 20px 20px 20px;
   text-align: center;
 }
-.MuiFormLabel-root {
-  font-family: 'Open Sans Condensed', sans-serif;
-}
+//.MuiFormLabel-root {
+//  font-family: 'Open Sans Condensed', sans-serif;
+//}

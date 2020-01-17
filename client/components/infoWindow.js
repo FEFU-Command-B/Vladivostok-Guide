@@ -57,7 +57,7 @@ class SimpleModal extends Component {
             <div className="modalOverlay">
                 <div className="modal" ref={node => (this.modal = node)}>
                     <div className="info__content">
-                        <img src="../static/images/123456.jpg"/>
+                        <img src={this.props.image}/>
                         <div>
                             <div className="name">{this.props.name}</div>
                             <div className="place__time">{this.props.time}</div>

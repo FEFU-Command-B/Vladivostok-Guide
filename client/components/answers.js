@@ -91,7 +91,7 @@ class Answers extends Component {
         return (
             <FormControl component="fieldset"    value={this.state.value} onChange={this.handleChange} disabled={this.state.isLast}>
                 <FormLabel className = "question">{this.state.question}</FormLabel>
-                <RadioGroup defaultValue="" aria-label="options" name="customized-radios">
+                <RadioGroup defaultValue="" className="variants" aria-label="options" name="customized-radios">
                     {Object.values(this.state.options).map(option =>
                         <FormControlLabel value={option} control={<StyledRadio />} label={option} />
                     )}
