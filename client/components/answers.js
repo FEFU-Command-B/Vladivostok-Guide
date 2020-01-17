@@ -9,6 +9,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import fetch from 'isomorphic-unfetch'
 import Button from "@material-ui/core/Button";
 import CardActions from "@material-ui/core/CardActions";
+//import { CookiesProvider } from 'react-cookie';
 function StyledRadio(props) {
 
     return (
@@ -37,14 +38,14 @@ class Answers extends Component {
         this.handleChange = this.handleChange.bind(this);
     }
      async GetData() {
-        //let request =  fetch('https://vladikproj.azurewebsites.net/question');
             const responce = await fetch('https://vladikproj.azurewebsites.net/question');
-                const json = await responce.json();
-                this.setState({options : json.options,
-                question : json.question, value: -1, isButtonDisabled : true,
-                isLoaded : true});
+            const json = await responce.json();
+            this.setState({options : json.options,
+            question : json.question, value: -1, isButtonDisabled : true,
+            isLoaded : true});
     }
     async UpdateData (event) {
+        //setCookie('quiz', {});
         if (this.state.isLast) {
             window.location.href = '/plan';
             return;

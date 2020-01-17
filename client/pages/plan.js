@@ -33,7 +33,7 @@ export default class Home extends Component {
                                         location={route.location}
                                         name = {route.name}
                                         time = {route.time}
-                                        image="../static/images/123456.jpg"
+                                        image={'https://vladikproj.azurewebsites.net/' + route.img}
                                         tags = {route.tags}/>
                                 </div>
                             ))
