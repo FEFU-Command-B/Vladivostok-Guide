@@ -24,14 +24,21 @@
 
 .left__container {
   position: absolute;
-  //bottom: 0;
-  //left: 0;
-  //height: 60%;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 80%;
+  display: flex;
+  align-items: center;
   @include media-max-width(1439) {
     height: 75%;
   }
 }
-
+.center__container {
+  position: absolute;
+  left: 38%;
+  top: 20%;
+}
 .boy {
   position: absolute;
   bottom: 0;
@@ -43,40 +50,19 @@
   }
 }
 
-.message__box {
-  margin-top: 50px;
-  margin-left: 80px;
-  width: 500px;
-  font-family: SequentialistBB, cursive;
-  font-size: 22px;
-  //span {
-  //  //color: #fff;
-  //}
-  //blockquote.bubble {
-  //  background-position: center;
-  //  background-repeat: no-repeat !important;
-  //  background-size: 100% 100%;
-  //  margin: 0 auto;
-  //  text-align: center;
-  //  height: 0;
-  //  box-sizing: border-box;
-  //  line-height: 1;
-  //  padding: 30px 50px 0 50px;
-  //}
-  //blockquote.speech {
-  //  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/speech-bubble.svg");
-  //  width: 80%;
-  //  height: 210px;
-  //  //padding-top: 6%;
-  //  //padding-bottom: 5%;
-  //}
-}
+//.message__box {
+//  margin-top: 50px;
+//  margin-left: 80px;
+//  width: 500px;
+//  font-family: SequentialistBB, cursive;
+//  font-size: 22px;
+//}
 
 .right-button {
   align-self: flex-end;
-  bottom: 50px;
+  bottom: 100px;
   position: absolute;
-  right: 30px;
+  right: 50px;
 
   button {
     font-family: SequentialistBB, cursive;
@@ -86,6 +72,7 @@
     height: 50px;
   }
 }
+
 .right-button_answer {
   align-self: flex-end;
   bottom: 7px;
@@ -104,6 +91,9 @@
 .quiz {
   margin :auto;
   //width :50%;
+  //width :50%;
   align-content: center;
+  padding: 20px 20px 20px 20px;
+  text-align: center;
 }
 

@@ -22,12 +22,14 @@ export default class Home extends Component {
         return (
             <Layout>
                 <div className="container">
-                    <div className="quiz">
-                     <QuestionCard ref="quiz" propsName={this.LastQuestionChange}/>
-                    </div>
                     <div className="left__container">
                         <div className="boy">
                             <img src="../static/images/Vladik.png"/>
+                        </div>
+                    </div>
+                    <div className="center__container">
+                        <div className="quiz">
+                            <QuestionCard ref="quiz" propsName={this.LastQuestionChange}/>
                         </div>
                     </div>
                     <div className="right-button">
