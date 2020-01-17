@@ -29,7 +29,7 @@ export default class Home extends Component {
                             Object.values(this.state.route).map((route =>
                                 <div className="plan__columns--item"  >
                                     <ColumnCard
-                                        description = {route.description}
+                                        //description = {route.description}
                                         location={route.location}
                                         name = {route.name}
                                         time = {route.time}

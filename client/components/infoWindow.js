@@ -58,9 +58,9 @@ class SimpleModal extends Component {
                     <div className="info__content">
                         <img src="../static/images/123456.jpg"/>
                         <div>
-                            <div>Name</div>
-                            <div>12:30</div>
-                            <div>Info info info info info info info</div>
+                            <div>{this.props.name}</div>
+                            <div>{this.props.time}</div>
+                            <div>{this.props.description}</div>
                         </div>
                     </div>
                 </div>

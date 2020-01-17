@@ -52,11 +52,11 @@ export default class ColumnCard extends Component {
                                 {this.props.time}
                             </Typography>
                         </div>
-                        <div>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                                {this.props.description}
-                            </Typography>
-                        </div>
+                        {/*<div>*/}
+                        {/*    <Typography variant="body2" color="textSecondary" component="p">*/}
+                        {/*        {this.props.description}*/}
+                        {/*    </Typography>*/}
+                        {/*</div>*/}
                         <div>
                             <Chip label="Hui" variant="outlined" />
                         </div>
