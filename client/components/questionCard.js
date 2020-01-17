@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -15,24 +15,26 @@ const useStyles = makeStyles({
     },
 });
 
-export default function QuestionCard() {
-    const classes = useStyles();
+export default class QuestionCard extends Component{
+    formRef =  React.createRef();
+    constructor(props) {
+        super(props);
+        this.state = {isLast : false};
+        this.PopLastValue = this.PopLastValue.bind(this);
+    }
+    PopLastValue (value) {
+      this.props.propsName(value);
+    }
 
-    return (
-        <Card className={classes.card}>
-            {/*<CardActionArea>*/}
+    render() {
+        return (
+            <Card className={useStyles.card}>
                 <CardContent>
-                    <Answers/>
+                    <Answers passVal={this.PopLastValue}/>
+                    {/*{this.setState(this.formRef.current)}*/}
+
                 </CardContent>
-            {/*</CardActionArea>*/}
-            {/*<CardActions>*/}
-            {/*    <Button size="small" color="primary">*/}
-            {/*        Share*/}
-            {/*    </Button>*/}
-            {/*    <Button size="small" color="primary">*/}
-            {/*        Learn More*/}
-            {/*    </Button>*/}
-            {/*</CardActions>*/}
-        </Card>
-    );
+            </Card>
+        );
+    }
 }

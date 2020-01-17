@@ -11,7 +11,6 @@ import Button from "@material-ui/core/Button";
 import CardActions from "@material-ui/core/CardActions";
 function StyledRadio(props) {
 
-
     return (
         <Radio
             disableRipple
@@ -23,12 +22,14 @@ function StyledRadio(props) {
 
 class Answers extends Component {
     constructor(props) {
+
         super(props);
         this.state = {
             options : "",
             question : "",
             value: -1,
-            isButtonDisabled: false
+            isButtonDisabled: true,
+            isLast: false
         };
         this.GetData = this.GetData.bind(this);
         this.UpdateData = this.UpdateData.bind(this);
@@ -39,21 +40,25 @@ class Answers extends Component {
             fetch('https://vladikproj.azurewebsites.net/question')
                 .then(res => res.json())
                 .then(res => this.setState({options : res.options,
-                question : res.question, value: -1, isButtonDisabled : false}));
+                question : res.question, value: -1, isButtonDisabled : true}));
     }
     async UpdateData (event) {
         fetch('https://vladikproj.azurewebsites.net/question/'+ this.state.value)
             .then(res => res.json())
             .then(res => {
                 if (res.question === null) {
-                    this.setState({isButtonDisabled : true});
+                    this.setState({isButtonDisabled : true, isLast: true});
+                    this.props.passVal(true);
                     return;
                 }
                 this.setState({options : res.options,
-                question : res.question, value: -1, isButtonDisabled : false})});
+                question : res.question, value: -1, isButtonDisabled : true})});
     }
     handleChange(event) {
-        this.setState({value: event.target.value});
+        if (this.state.isLast) {
+            return;
+        }
+        this.setState({value: event.target.value, isButtonDisabled : false});
     }
     componentDidMount() {
         this.GetData();
