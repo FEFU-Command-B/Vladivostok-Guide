@@ -59,13 +59,15 @@ class SimpleModal extends Component {
                     <div className="info__content">
                         <img src={this.props.image}/>
                         <div>
-                            <div className="name">{this.props.name}</div>
-                            <div className="place__time">{this.props.time}</div>
-                            <div className="description">{this.props.description}</div>
                             <div>
+                                <div className="name">{this.props.name}</div>
+                                <div className="place__time">{this.props.time}</div>
                                 {this.props.tags.map(tag =>
                                     <Chip label={tag} className="place__chip" variant="outlined" />)
                                 }
+                            </div>
+                            <div className="moving">
+                                <div className="description">{this.props.description}</div>
                             </div>
                         </div>
                     </div>

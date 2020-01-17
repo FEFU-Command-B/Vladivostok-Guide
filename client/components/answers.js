@@ -8,6 +8,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import fetch from 'isomorphic-unfetch'
 import Button from "@material-ui/core/Button";
+import Icon from '@material-ui/core/Icon';
 import CardActions from "@material-ui/core/CardActions";
 //import { CookiesProvider } from 'react-cookie';
 function StyledRadio(props) {
@@ -96,9 +97,9 @@ class Answers extends Component {
                         <FormControlLabel value={option} control={<StyledRadio />} label={option} />
                     )}
                 </RadioGroup>
-                <div className="right-button_answer">
+                <div className="right-button__answer">
                     <Button size="small" color="primary" onClick={this.UpdateData} disabled={this.state.isButtonDisabled}>
-                        {this.state.isLast? 'Go to your personal Route' : 'Confirm'}
+                        {this.state.isLast? 'Поехали' : 'Готово'}
                     </Button>
                 </div>
             </FormControl>);
