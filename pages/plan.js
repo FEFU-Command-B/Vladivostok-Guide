@@ -11,9 +11,10 @@ export default class Home extends Component {
 	}
 
 	async componentDidMount() {
-		const response = await fetch('https://vladikproj.azurewebsites.net/route', {
-			credentials: 'include'
-		});
+		let cserv = 'https://vladikproj.azurewebsites.net';
+		//cserv = 'http://127.0.0.1:5000';
+
+		const response = await fetch(`${cserv}/route`, {credentials: 'include'});
 		const json = await response.json();
 		this.setState({route: json.route, isLoaded: true});
 	}

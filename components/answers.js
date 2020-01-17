@@ -23,6 +23,12 @@ function StyledRadio(props) {
 	);
 }
 
+let cserv = 'https://vladikproj.azurewebsites.net';
+//cserv = 'http://127.0.0.1:5000';
+const init = {
+	credentials: 'include'
+}
+
 class Answers extends Component {
 	constructor(props) {
 
@@ -41,34 +47,23 @@ class Answers extends Component {
 	}
 
 	async GetData() {
-		const responce = await fetch('https://vladikproj.azurewebsites.net/question', {
-			credentials: 'include'
-		});
+
+		const responce = await fetch(`${cserv}/question`, init);
 		const json = await responce.json();
 		this.setState({
 			options: json.options,
 			question: json.question, value: -1, isButtonDisabled: true,
 			isLoaded: true
 		});
-		const resp1 = await fetch('https://vladikproj.azurewebsites.net/cookieTest/set/mm', {
-			credentials: 'include'
-		});
-		const json1 = await resp1.json();
-		console.log(json1);
-		const resp2 = await fetch('https://vladikproj.azurewebsites.net/cookieTest/get/mm', {
-			credentials: 'include'
-		});
-		const json2 = await resp2.json();
-		console.log(json2);
 	}
 
 	async UpdateData(event) {
-		//setCookie('quiz', {});
 		if (this.state.isLast) {
 			window.location.href = '/plan';
 			return;
 		}
-		fetch('https://vladikproj.azurewebsites.net/question/' + this.state.value)
+		//debugger;
+		fetch(`${cserv}/question/` + this.state.value, init)
 			.then(res => res.json())
 			.then(res => {
 				if (res.question === null) {
@@ -97,7 +92,7 @@ class Answers extends Component {
 
 	render() {
 		if (!this.state.isLoaded) {
-			return (<div></div>);
+			return (<div/>);
 		}
 		return (
 			<FormControl component="fieldset" value={this.state.value} onChange={this.handleChange}
