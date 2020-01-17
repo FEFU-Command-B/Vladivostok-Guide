@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Chip from '@material-ui/core/Chip';
 
 class SimpleModal extends Component {
 
@@ -61,6 +62,11 @@ class SimpleModal extends Component {
                             <div>{this.props.name}</div>
                             <div>{this.props.time}</div>
                             <div>{this.props.description}</div>
+                            <div>
+                                {this.props.tags.map(tag =>
+                                    <Chip label={tag} variant="outlined" />)
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>

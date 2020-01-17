@@ -28,11 +28,14 @@ export default class ColumnCard extends Component {
         this.setState({ showModal: !this.state.showModal });
     }
     render() {
+
         const { showModal } = this.state;
         return (
             <Card className="route__card">
                 {showModal &&
-                <SimpleModal onCloseRequest={() => this.handleToggleModal()}>
+                <SimpleModal tags={this.props.tags} name={this.props.name}
+                             time={this.props.time} description={this.props.description}
+                             onCloseRequest={() => this.handleToggleModal()}>
                     <img src="../static/images/123456.jpg" alt="Nature" />
                 </SimpleModal>}
                 <CardActionArea>
@@ -58,7 +61,9 @@ export default class ColumnCard extends Component {
                         {/*    </Typography>*/}
                         {/*</div>*/}
                         <div>
-                            <Chip label="Hui" variant="outlined" />
+                            {this.props.tags.map(tag =>
+                                <Chip label={tag} variant="outlined" />)
+                            }
                         </div>
                     </CardContent>
                 </CardActionArea>
