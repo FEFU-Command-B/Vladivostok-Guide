@@ -20,9 +20,7 @@ class Layout extends Component {
                 <CssBaseline/>
                 <AppBar position="relative">
                 <Toolbar>
-
                         Vladik Traveler
-
                 </Toolbar>
             </AppBar>
                 {this.props.children}
