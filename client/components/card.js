@@ -40,22 +40,21 @@ export default class ColumnCard extends Component {
                         component="img"
                         alt="Contemplative Reptile"
                         height="140"
-                        image="../static/images/123456.jpg"
+                        image={this.props.image}
                         title="Contemplative Reptile"
                     />
                     <CardContent>
                         <div className="time">
                             <Typography gutterBottom variant="h5" component="h2">
-                                Lizard
+                                {this.props.name}
                             </Typography>
                             <Typography gutterBottom variant="h5" component="h2">
-                                12:30
+                                {this.props.time}
                             </Typography>
                         </div>
                         <div>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                                across all continents except Antarctica
+                                {this.props.discription}
                             </Typography>
                         </div>
                         <div>

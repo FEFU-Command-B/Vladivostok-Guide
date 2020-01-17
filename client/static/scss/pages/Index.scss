@@ -24,9 +24,9 @@
 
 .left__container {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 60%;
+  //bottom: 0;
+  //left: 0;
+  //height: 60%;
   @include media-max-width(1439) {
     height: 75%;
   }
@@ -35,8 +35,8 @@
 .boy {
   position: absolute;
   bottom: 0;
-  left: 0px;
-  z-index: -1;
+  left: 0;
+  //z-index: -1;
   width: 100%;
   img {
     width: 50%;
