@@ -28,6 +28,12 @@
   top: 20%;
 }
 
+@include media-max-width(767) {
+  .center__container {
+    left: 0;
+  }
+}
+
 .boy {
   position: absolute;
   bottom: 0;
@@ -78,16 +84,30 @@
   }
 }
 
+@include media-max-width(767) {
+  .right-button__answer {
+    display: contents;
+  }
+}
+
 .variants {
   span {
     font-family: 'Open Sans Condensed', sans-serif !important;
     font-size: 30px !important;
+
+
   }
+
+}
+
+.MuiFormControlLabel-root {
+  border: 1px solid rgba(68, 68, 68, 0.54);
+  margin: 5px 0;
 }
 
 .quiz {
   margin: auto;
   align-content: center;
-  text-align: center;
   width: 75%;
+
 }
