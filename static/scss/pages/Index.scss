@@ -84,11 +84,11 @@
   }
 }
 
-@include media-max-width(767) {
+
   .right-button__answer {
     display: contents;
   }
-}
+
 
 .variants {
   span {
